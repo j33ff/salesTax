@@ -30,13 +30,13 @@ function calculateSalesTax(salesData, taxRates) {
     if (!output.hasOwnProperty(salesObject.name)){
       output[salesObject.name] = {totalSales: 0, totalTaxes: 0};
     }
-// set total sales and total taxes to appropriate numbers
-// what are those numbers based on?
+    // set total sales and total taxes to appropriate numbers
+    // what are those numbers based on?
     var sumOfSales = salesObject.sales.reduce(function(accumulator, currentValue){
       return accumulator + currentValue;
     });
     output[salesObject.name].totalSales += sumOfSales;
-// didn't need a for loop
+    // didn't need a for loop
     var sumOfTaxes = sumOfSales * taxRates[salesObject.province];
     output[salesObject.name].totalTaxes += sumOfTaxes;
   }
